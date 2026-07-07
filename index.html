@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SyC Óptica | Cuidamos tu salud visual en Rosario</title>
-<meta name="description" content="SyC Óptica en Rosario: lentes recetados, multifocales, anteojos de sol, accesorios y atención personalizada. Av. Ovidio Lagos 3016. WhatsApp 341 364 0899.">
+<meta name="description" content="SyC Óptica en Rosario: lentes recetados, multifocales, contactología, anteojos de sol, promociones y atención personalizada. Av. Ovidio Lagos 3016. WhatsApp 341 364 0899.">
 <meta name="keywords" content="óptica Rosario, lentes recetados, multifocales, lentes de contacto, anteojos de sol, SyC Óptica, salud visual">
 <meta name="theme-color" content="#0B3D91">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="SyC Óptica | Cuidamos tu salud visual en Rosario">
-<meta property="og:description" content="Lentes recetados, multifocales, accesorios y asesoramiento profesional. Av. Ovidio Lagos 3016, Rosario.">
+<meta property="og:description" content="Lentes recetados, multifocales, promociones y asesoramiento profesional. Av. Ovidio Lagos 3016, Rosario.">
 <meta property="og:site_name" content="SyC Óptica">
 <meta property="og:image" content="assets/logo-syc.jpg">
 <meta property="og:locale" content="es_AR">
@@ -25,6 +25,7 @@
   "image": "assets/logo-syc.jpg",
   "telephone": "+54 9 341 364-0899",
   "url": "https://sycoptica.com.ar",
+  "sameAs": ["https://www.instagram.com/sycoptica"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. Ovidio Lagos 3016",
@@ -46,253 +47,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --azul-noche:#061B3F;
-  --azul-real:#0B3D91;
-  --azul-brillo:#2E7CE6;
-  --celeste:#6FC3FF;
-  --hielo:#F2F7FD;
-  --blanco:#FFFFFF;
-  --tinta:#1A2537;
-  --gris:#5B6B84;
-  --borde:#DCE7F5;
-  --radius:18px;
-  --sombra:0 18px 50px -18px rgba(6,27,63,.25);
-  --f-display:'Sora',sans-serif;
-  --f-body:'Instrument Sans',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--f-body);color:var(--tinta);background:var(--blanco);line-height:1.6;font-size:16.5px}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-.container{width:min(1160px,92%);margin-inline:auto}
-h1,h2,h3{font-family:var(--f-display);line-height:1.15;color:var(--azul-noche)}
-:focus-visible{outline:3px solid var(--celeste);outline-offset:3px;border-radius:4px}
-
-/* ---------- Barra superior ---------- */
-.topbar{background:var(--azul-noche);color:#CFE3FA;font-size:.85rem}
-.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.45rem 0}
-.topbar a{display:inline-flex;align-items:center;gap:.4rem;transition:color .2s}
-.topbar a:hover{color:var(--celeste)}
-.topbar svg{width:14px;height:14px;flex:none}
-.topbar .lema{letter-spacing:.06em;text-transform:uppercase;font-weight:500}
-@media(max-width:640px){.topbar .lema{display:none}.topbar .container{justify-content:center}}
-
-/* ---------- Navegación ---------- */
-header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
-.nav .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
-.marca{display:flex;align-items:center;gap:.65rem;font-family:var(--f-display)}
-.marca .iris{width:40px;height:40px;flex:none}
-.marca strong{font-size:1.25rem;font-weight:800;color:var(--azul-real);letter-spacing:.02em}
-.marca span{display:block;font-size:.68rem;letter-spacing:.32em;color:var(--gris);font-weight:600;text-transform:uppercase;margin-top:-3px}
-nav ul{display:flex;gap:1.7rem;align-items:center}
-nav a{font-weight:500;font-size:.95rem;color:var(--tinta);position:relative;padding:.3rem 0}
-nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--azul-brillo);transition:width .25s}
-nav a:hover::after{width:100%}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-display);font-weight:600;font-size:.92rem;padding:.68rem 1.3rem;border-radius:999px;transition:transform .2s,box-shadow .2s,background .2s;border:0;cursor:pointer}
-.btn-primario{background:var(--azul-real);color:#fff;box-shadow:0 10px 24px -10px rgba(11,61,145,.55)}
-.btn-primario:hover{background:var(--azul-brillo);transform:translateY(-2px)}
-.btn-fantasma{border:1.5px solid rgba(255,255,255,.55);color:#fff}
-.btn-fantasma:hover{background:rgba(255,255,255,.12)}
-.btn svg{width:17px;height:17px}
-.hamburguesa{display:none;background:none;border:0;cursor:pointer;padding:.4rem}
-.hamburguesa span{display:block;width:24px;height:2.5px;background:var(--azul-noche);margin:5px 0;border-radius:2px;transition:.3s}
-@media(max-width:900px){
-  nav{position:fixed;inset:0;top:0;background:var(--azul-noche);display:none;align-items:center;justify-content:center;z-index:70}
-  nav.abierto{display:flex}
-  nav ul{flex-direction:column;gap:2rem;text-align:center}
-  nav a{color:#fff;font-size:1.3rem;font-family:var(--f-display)}
-  .hamburguesa{display:block;z-index:80;position:relative}
-  .hamburguesa.abierto span{background:#fff}
-  .hamburguesa.abierto span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-  .hamburguesa.abierto span:nth-child(2){opacity:0}
-  .hamburguesa.abierto span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-  .nav .btn-primario{display:none}
-}
-
-/* ---------- Hero ---------- */
-.hero{position:relative;background:linear-gradient(140deg,#04122E 0%,var(--azul-real) 55%,#1E63C9 100%);color:#fff;overflow:hidden}
-.hero .haz{position:absolute;inset:0;pointer-events:none;opacity:.5}
-.hero .container{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:5.5rem 0 6rem}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--celeste);font-weight:600;margin-bottom:1.1rem}
-.hero .eyebrow::before{content:"";width:26px;height:2px;background:var(--celeste)}
-.hero h1{color:#fff;font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:var(--celeste)}
-.hero p{margin:1.3rem 0 2.1rem;color:#D6E6FA;max-width:46ch;font-size:1.08rem}
-.hero .acciones{display:flex;gap:.9rem;flex-wrap:wrap}
-.hero-visual{position:relative;display:grid;place-items:center}
-.iris-grande{width:min(380px,80%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.35))}
-.hero-datos{display:flex;gap:2.4rem;margin-top:3.4rem;flex-wrap:wrap}
-.dato b{font-family:var(--f-display);font-size:1.7rem;font-weight:800;color:#fff;display:block}
-.dato span{font-size:.85rem;color:#AECBEF}
-@media(max-width:900px){
-  .hero .container{grid-template-columns:1fr;padding:3.5rem 0 4rem;text-align:center}
-  .hero .eyebrow{justify-content:center}
-  .hero p{margin-inline:auto}
-  .hero .acciones{justify-content:center}
-  .hero-visual{order:-1}
-  .iris-grande{width:min(230px,60%)}
-  .hero-datos{justify-content:center;margin-top:2.4rem}
-}
-
-/* ---------- Secciones ---------- */
-section{padding:5.2rem 0}
-.encabezado{max-width:640px;margin-bottom:3rem}
-.encabezado.centrado{margin-inline:auto;text-align:center}
-.eyebrow-s{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--azul-brillo);font-weight:700;margin-bottom:.8rem}
-.eyebrow-s::before{content:"";width:22px;height:2px;background:var(--azul-brillo)}
-.encabezado.centrado .eyebrow-s::after{content:"";width:22px;height:2px;background:var(--azul-brillo)}
-section h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.01em}
-.encabezado p{color:var(--gris);margin-top:1rem}
-
-/* Quiénes somos */
-.nosotros{background:var(--hielo)}
-.grilla-nosotros{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.bloque-n{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:1.7rem 1.6rem;transition:transform .25s,box-shadow .25s}
-.bloque-n:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
-.bloque-n .icono{width:48px;height:48px;border-radius:13px;background:var(--hielo);display:grid;place-items:center;margin-bottom:1rem;color:var(--azul-real)}
-.bloque-n .icono svg{width:24px;height:24px}
-.bloque-n h3{font-size:1.05rem;font-weight:700;margin-bottom:.45rem}
-.bloque-n p{font-size:.93rem;color:var(--gris)}
-@media(max-width:900px){.grilla-nosotros{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.grilla-nosotros{grid-template-columns:1fr}}
-
-/* Carrusel de marcas */
-.marcas{background:linear-gradient(150deg,var(--azul-noche),var(--azul-real));color:#fff;overflow:hidden}
-.marcas h2{color:#fff}
-.marcas .encabezado p{color:#B9D3F2}
-.marcas .eyebrow-s{color:var(--celeste)}
-.marcas .eyebrow-s::before,.marcas .encabezado.centrado .eyebrow-s::after{background:var(--celeste)}
-.cinta-marcas{position:relative;padding:.5rem 0 .8rem;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.pista{display:flex;gap:1.4rem;width:max-content;animation:desfile 38s linear infinite;padding:1rem 0}
-.cinta-marcas:hover .pista{animation-play-state:paused}
-.banner-marca{width:300px;height:150px;flex:none;border-radius:16px;position:relative;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.35rem;
-  background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.05));
-  border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(3px);
-  transition:transform .3s,border-color .3s,background .3s;cursor:pointer}
-.banner-marca::before{content:"";position:absolute;top:-60%;left:-30%;width:60%;height:220%;transform:rotate(20deg);
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transition:left .55s}
-.banner-marca:hover{transform:translateY(-6px) scale(1.02);border-color:var(--celeste);background:linear-gradient(135deg,rgba(111,195,255,.2),rgba(255,255,255,.06))}
-.banner-marca:hover::before{left:110%}
-.banner-marca img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.banner-marca span{font-family:var(--f-display);font-size:1.5rem;font-weight:800;letter-spacing:.06em;color:#fff}
-.banner-marca .tipo-b{font-weight:600;font-style:italic;letter-spacing:.02em}
-.banner-marca .tipo-c{letter-spacing:.28em;font-weight:700;font-size:1.3rem}
-.banner-marca small{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#A9CCF3}
-@keyframes desfile{to{transform:translateX(-50%)}}
-@media(max-width:640px){.banner-marca{width:230px;height:120px}.banner-marca span{font-size:1.2rem}}
-@media (prefers-reduced-motion: reduce){
-  .pista{animation:none;overflow-x:auto;width:auto}
-  .cinta-marcas{mask-image:none;-webkit-mask-image:none}
-}
-
-/* Especialidades */
-.grilla-esp{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.esp{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:1.8rem 1.6rem;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
-.esp:hover{transform:translateY(-5px);box-shadow:var(--sombra);border-color:transparent}
-.esp .icono{width:52px;height:52px;border-radius:14px;background:var(--hielo);display:grid;place-items:center;margin-bottom:1.1rem;color:var(--azul-real)}
-.esp .icono svg{width:26px;height:26px}
-.esp h3{font-size:1.12rem;font-weight:700;margin-bottom:.5rem}
-.esp p{font-size:.94rem;color:var(--gris)}
-.esp::after{content:"";position:absolute;right:-40px;top:-40px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(111,195,255,.22),transparent 70%);opacity:0;transition:opacity .3s}
-.esp:hover::after{opacity:1}
-@media(max-width:900px){.grilla-esp{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.grilla-esp{grid-template-columns:1fr}}
-
-/* Accesorios */
-.accesorios{background:var(--hielo)}
-.grilla-acc{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
-.acc{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:1.6rem 1.4rem;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s}
-.acc:hover{transform:translateY(-5px);box-shadow:var(--sombra);border-color:transparent}
-.acc .icono{width:56px;height:56px;border-radius:50%;background:linear-gradient(140deg,var(--hielo),#E2EEFC);display:grid;place-items:center;margin:0 auto 1rem;color:var(--azul-real)}
-.acc .icono svg{width:26px;height:26px}
-.acc h3{font-size:1rem;font-weight:700;margin-bottom:.45rem}
-.acc p{font-size:.88rem;color:var(--gris)}
-.nota-acc{text-align:center;color:var(--gris);font-size:.9rem;margin-top:2rem}
-@media(max-width:1000px){.grilla-acc{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grilla-acc{grid-template-columns:1fr}}
-
-/* Misión / Visión / Compromiso */
-.pilares{background:linear-gradient(155deg,var(--azul-noche) 0%,#0A2E6E 100%);color:#fff;position:relative;overflow:hidden}
-.pilares h2,.pilares h3{color:#fff}
-.pilares .encabezado p{color:#B9D3F2}
-.grilla-pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;position:relative}
-.pilar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:2rem 1.7rem;backdrop-filter:blur(4px)}
-.pilar .num{font-family:var(--f-display);font-size:.8rem;letter-spacing:.25em;color:var(--celeste);font-weight:700}
-.pilar h3{font-size:1.25rem;margin:.7rem 0 .7rem}
-.pilar p{font-size:.95rem;color:#C9DDF6}
-@media(max-width:900px){.grilla-pilares{grid-template-columns:1fr}}
-
-/* Obras sociales */
-.obras .franja{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2.2rem}
-.chip{border:1.5px solid var(--borde);border-radius:999px;padding:.55rem 1.2rem;font-size:.9rem;color:var(--gris);font-weight:500;background:#fff}
-.obras .nota{text-align:center;color:var(--gris);font-size:.9rem;margin-top:1.6rem}
-
-/* Contacto */
-.contacto{background:var(--hielo)}
-.contacto .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:stretch}
-.fichas{display:grid;gap:1rem;margin-top:2rem}
-.ficha{display:flex;gap:1rem;background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:1.2rem 1.3rem;align-items:flex-start}
-.ficha .icono{width:44px;height:44px;flex:none;border-radius:12px;background:var(--hielo);display:grid;place-items:center;color:var(--azul-real)}
-.ficha .icono svg{width:22px;height:22px}
-.ficha b{font-family:var(--f-display);font-size:.98rem;color:var(--azul-noche)}
-.ficha p, .ficha a.dato-link{font-size:.93rem;color:var(--gris);display:block;margin-top:.15rem}
-.ficha a.dato-link:hover{color:var(--azul-brillo)}
-.contacto .btn{margin-top:1.6rem}
-.mapa{border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra);min-height:420px;background:#DCE7F5}
-.mapa iframe{width:100%;height:100%;border:0;min-height:420px}
-@media(max-width:900px){.contacto .container{grid-template-columns:1fr}}
-
-/* Footer */
-footer{background:var(--azul-noche);color:#B9CFEA;padding:4rem 0 0;font-size:.92rem}
-.grilla-footer{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem}
-footer h4{font-family:var(--f-display);color:#fff;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.1rem}
-footer li+li{margin-top:.55rem}
-footer a:hover{color:var(--celeste)}
-.footer-marca p{margin-top:1rem;max-width:32ch;color:#8FAEDA}
-.legal{border-top:1px solid rgba(255,255,255,.12);padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#7E9CC9;font-size:.83rem}
-@media(max-width:900px){.grilla-footer{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grilla-footer{grid-template-columns:1fr}}
-
-/* WhatsApp flotante */
-.wsp-flotante{position:fixed;right:22px;bottom:22px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.35);transition:transform .2s}
-.wsp-flotante:hover{transform:scale(1.08)}
-.wsp-flotante svg{width:30px;height:30px;fill:#fff}
-
-/* Animaciones de aparición */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-@keyframes girar{to{transform:rotate(360deg)}}
-.iris-aspas{transform-origin:50% 50%;animation:girar 40s linear infinite}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none;transition:none}
-  .iris-aspas{animation:none}
-}
-</style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+
+<!-- Banner de anuncio (administrable) -->
+<a id="banner-promo" class="banner-promo" hidden></a>
 
 <!-- Barra superior -->
 <div class="topbar">
   <div class="container">
-    <span class="lema">Cuidamos tu salud visual</span>
-    <div style="display:flex;gap:1.4rem;flex-wrap:wrap">
-      <a href="https://wa.me/5493413640899" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg>
-        341 364 0899
-      </a>
-      <a href="#contacto">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        Av. Ovidio Lagos 3016, Rosario
-      </a>
+    <span class="lema" id="top-lema">Cuidamos tu salud visual</span>
+    <div style="display:flex;gap:1.3rem;flex-wrap:wrap;justify-content:center">
+      <a id="top-dir" href="#contacto"></a>
+      <a id="top-wa" href="#"></a>
     </div>
   </div>
 </div>
@@ -300,435 +68,180 @@ footer a:hover{color:var(--celeste)}
 <!-- Navegación -->
 <header class="nav">
   <div class="container">
-    <a class="marca" href="#inicio" aria-label="SyC Óptica, ir al inicio">
-      <svg class="iris" viewBox="0 0 64 64" aria-hidden="true">
-        <g class="iris-aspas" stroke="#2E7CE6" stroke-width="4.5" stroke-linecap="round" fill="none">
-          <path d="M32 5 q15 6 13 21"/><path d="M59 32 q-6 15 -21 13"/>
-          <path d="M32 59 q-15 -6 -13 -21"/><path d="M5 32 q6 -15 21 -13"/>
-        </g>
-        <circle cx="32" cy="32" r="12.5" fill="#061B3F"/>
-        <circle cx="27.5" cy="27.5" r="4.5" fill="#fff"/>
-        <circle cx="36" cy="36.5" r="2" fill="#fff" opacity=".8"/>
-      </svg>
-      <span><strong>SyC</strong><span>Óptica</span></span>
+    <a class="marca" href="#inicio" aria-label="SyC Óptica, inicio">
+      <svg class="iris" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0B3D91"/><circle cx="32" cy="32" r="13" fill="#081C3F"/><circle cx="27" cy="27" r="5" fill="#fff"/><g stroke="#6FC3FF" stroke-width="4" stroke-linecap="round" fill="none"><path d="M32 6 q14 6 12 20"/><path d="M58 32 q-6 14 -20 12"/><path d="M32 58 q-14 -6 -12 -20"/><path d="M6 32 q6 -14 20 -12"/></g></svg>
+      <div><strong>SyC</strong><span>Óptica</span></div>
     </a>
-
-    <nav id="menu" aria-label="Navegación principal">
+    <nav id="menu" aria-label="Principal">
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#promociones">Promociones</a></li>
         <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#accesorios">Accesorios</a></li>
-        <li><a href="#obras-sociales">Obras sociales</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#novedades">Novedades</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a id="nav-ig" class="nav-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram" hidden></a></li>
       </ul>
     </nav>
-
-    <a class="btn btn-primario" href="https://wa.me/5493413640899" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg>
-      Escribinos
+    <a id="nav-cta" class="btn btn-primario" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.2 13.9c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .6-.2 1Z"/></svg>
+      WhatsApp
     </a>
-
-    <button class="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburguesa" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="hero" id="inicio" style="padding:0">
-  <svg class="haz" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-50 620 C 400 480, 900 720, 1500 520" stroke="rgba(111,195,255,.35)" stroke-width="2" fill="none"/>
-    <path d="M-50 660 C 450 540, 950 760, 1500 580" stroke="rgba(111,195,255,.18)" stroke-width="1.5" fill="none"/>
-    <path d="M-50 120 C 350 240, 800 20, 1500 160" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
-  </svg>
-  <div class="container">
-    <div>
-      <span class="eyebrow">Óptica en Rosario</span>
-      <h1>Mirá el mundo con <em>otra claridad</em></h1>
-      <p>En SyC Óptica combinamos asesoramiento profesional, tecnología y las mejores marcas para que encuentres los lentes ideales para tu vista y tu estilo.</p>
-      <div class="acciones">
-        <a class="btn btn-primario" href="https://wa.me/5493413640899" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg>
-          Consultá por WhatsApp
+<main>
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <svg class="haz" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FC3FF" stop-opacity=".35"/><stop offset="1" stop-color="#6FC3FF" stop-opacity="0"/></linearGradient></defs><path d="M0 600 L500 0 L780 0 L200 600 Z" fill="url(#g1)"/><path d="M300 600 L820 0 L940 0 L440 600 Z" fill="url(#g1)" opacity=".6"/></svg>
+    <div class="container">
+      <div>
+        <span class="etiqueta" id="hero-etiqueta"></span>
+        <h1 id="hero-titulo"></h1>
+        <p id="hero-texto"></p>
+        <div class="acciones">
+          <a id="hero-btn1" class="btn btn-primario" href="#"></a>
+          <a id="hero-btn2" class="btn btn-fantasma" href="#"></a>
+        </div>
+        <div class="datos" id="hero-datos"></div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <svg viewBox="0 0 320 200"><g fill="none" stroke="#6FC3FF" stroke-width="5" stroke-linecap="round"><circle cx="95" cy="105" r="58" stroke="#fff" stroke-opacity=".9"/><circle cx="225" cy="105" r="58" stroke="#fff" stroke-opacity=".9"/><path d="M153 105 q7 -14 14 0" stroke="#fff" stroke-opacity=".9"/><path d="M37 96 q-14 -4 -22 -14" stroke="#fff" stroke-opacity=".7"/><path d="M283 96 q14 -4 22 -14" stroke="#fff" stroke-opacity=".7"/></g><circle cx="95" cy="105" r="44" fill="#6FC3FF" opacity=".14"/><circle cx="225" cy="105" r="44" fill="#6FC3FF" opacity=".14"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros">
+    <div class="container">
+      <div class="encabezado centrado reveal">
+        <span class="eyebrow-s">Nosotros</span>
+        <h2 id="nos-titulo"></h2>
+        <p id="nos-texto"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promociones -->
+  <section class="promos" id="promociones">
+    <div class="container">
+      <div class="encabezado reveal">
+        <span class="eyebrow-s">Promociones</span>
+        <h2>Aprovechá nuestras promos vigentes</h2>
+        <p>Descuentos y beneficios que se renuevan todos los meses.</p>
+      </div>
+      <div class="grid-promos" id="grid-promos"></div>
+    </div>
+  </section>
+
+  <!-- Especialidades -->
+  <section id="especialidades">
+    <div class="container">
+      <div class="encabezado centrado reveal">
+        <span class="eyebrow-s">Especialidades</span>
+        <h2>Soluciones para cada mirada</h2>
+        <p>Todo lo que tu visión necesita, en un solo lugar.</p>
+      </div>
+      <div class="carrusel reveal" id="carrusel-esp" aria-roledescription="carrusel">
+        <button class="carrusel-flecha prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="carrusel-vista"><div class="carrusel-pista" id="pista-esp"></div></div>
+        <button class="carrusel-flecha next" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="carrusel-puntos" id="puntos-esp"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcas -->
+  <section class="marcas-sec" id="marcas">
+    <div class="container">
+      <div class="encabezado centrado reveal">
+        <span class="eyebrow-s">Marcas</span>
+        <h2>Marcas líderes, garantía oficial</h2>
+        <p>Trabajamos únicamente con productos originales.</p>
+      </div>
+    </div>
+    <div class="cinta-marcas reveal"><div class="pista" id="pista-marcas"></div></div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <div class="container">
+      <div class="encabezado reveal">
+        <span class="eyebrow-s">Galería</span>
+        <h2>Un vistazo a nuestro local</h2>
+        <p>Modelos, novedades y el día a día de la óptica.</p>
+      </div>
+      <div class="grid-galeria" id="grid-galeria"></div>
+    </div>
+  </section>
+
+  <!-- Publicaciones -->
+  <section class="novedades" id="novedades">
+    <div class="container">
+      <div class="encabezado reveal">
+        <span class="eyebrow-s">Novedades</span>
+        <h2>Noticias y consejos de salud visual</h2>
+        <p>Publicaciones de nuestro equipo para cuidar tu vista.</p>
+      </div>
+      <div class="grid-blog" id="grid-blog"></div>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="instagram-sec" id="instagram">
+    <div class="container">
+      <div class="ig-cabecera reveal">
+        <div class="encabezado">
+          <span class="eyebrow-s">Instagram</span>
+          <h2 id="ig-titulo"></h2>
+          <p id="ig-texto"></p>
+        </div>
+        <a id="ig-boton" class="btn btn-ig" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.7.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.2-.2.6-.3 1.7-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.7.2.4.3.7.6 1 .3.3.6.5 1 .6.2.1.6.2 1.7.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.7-.3 1-.6.3-.3.5-.6.6-1 .1-.2.2-.6.3-1.7.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.7-.2-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.2-.1-.6-.2-1.7-.3-1.3-.1-1.7-.1-4.8-.1Zm0 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-2.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+          <span>Seguinos en Instagram</span>
         </a>
-        <a class="btn btn-fantasma" href="#especialidades">Ver especialidades</a>
       </div>
-      <div class="hero-datos">
-        <div class="dato"><b>+15</b><span>años de experiencia</span></div>
-        <div class="dato"><b>100%</b><span>atención personalizada</span></div>
-        <div class="dato"><b>1ras</b><span>marcas del mercado</span></div>
-      </div>
+      <div class="grid-ig" id="grid-ig"></div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="iris-grande" viewBox="0 0 200 200">
-        <g class="iris-aspas" stroke="#6FC3FF" stroke-width="9" stroke-linecap="round" fill="none">
-          <path d="M100 14 q46 18 40 66"/>
-          <path d="M186 100 q-18 46 -66 40"/>
-          <path d="M100 186 q-46 -18 -40 -66"/>
-          <path d="M14 100 q18 -46 66 -40"/>
-          <path d="M160 39 q20 45 -18 76" opacity=".45"/>
-          <path d="M40 161 q-20 -45 18 -76" opacity=".45"/>
-        </g>
-        <circle cx="100" cy="100" r="38" fill="#0A1B38" stroke="#fff" stroke-width="4"/>
-        <circle cx="86" cy="86" r="14" fill="#fff"/>
-        <circle cx="112" cy="112" r="6" fill="#fff" opacity=".85"/>
-      </svg>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Nosotros -->
-<section class="nosotros" id="nosotros">
-  <div class="container">
-    <div class="encabezado centrado reveal">
-      <span class="eyebrow-s">Quiénes somos</span>
-      <h2>Somos SyC Óptica</h2>
-      <p>Una óptica de barrio con mirada profesional: un equipo que conoce a cada cliente por su nombre y se toma el tiempo de encontrar la solución visual correcta, sin apuros.</p>
-    </div>
-    <div class="grilla-nosotros">
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Nuestra experiencia</h3>
-        <p>Años de trayectoria en el rubro óptico nos permiten resolver desde la receta más simple hasta los casos más exigentes.</p>
-      </article>
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21C7 17 4 13.5 4 9.8A4.8 4.8 0 0 1 12 6a4.8 4.8 0 0 1 8 3.8C20 13.5 17 17 12 21Z"/></svg></div>
-        <h3>Compromiso con la salud visual</h3>
-        <p>Cuidar tu visión es nuestra razón de ser: cada trabajo se controla y verifica antes de llegar a tus manos.</p>
-      </article>
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21v-2a3 3 0 0 1 6 0v2M12 3a4 4 0 0 1 4 4c0 3-1.5 4-4 4s-4-1-4-4a4 4 0 0 1 4-4Z"/></svg></div>
-        <h3>Atención personalizada</h3>
-        <p>Te escuchamos, te asesoramos y te acompañamos en cada paso, desde la elección del armazón hasta el ajuste final.</p>
-      </article>
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.8L6.6 19.7l1-6L3.2 9.4l6.1-.9Z"/></svg></div>
-        <h3>Calidad de nuestros productos</h3>
-        <p>Monturas de primeras marcas y cristales certificados: trabajamos solo con productos que nosotros mismos usaríamos.</p>
-      </article>
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <h3>Tecnología y precisión</h3>
-        <p>Cristales de diseño digital y procesos de medición precisos para que cada lente quede exactamente como lo indica tu receta.</p>
-      </article>
-      <article class="bloque-n reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 10h8M8 14h5M21 12a9 9 0 1 1-4-7.5L21 4l-.6 4A8.9 8.9 0 0 1 21 12Z"/></svg></div>
-        <h3>Asesoramiento profesional</h3>
-        <p>Respondemos todas tus dudas con claridad: tipos de cristales, tratamientos, coberturas y el mantenimiento de tus lentes.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Marcas -->
-<section class="marcas" aria-label="Marcas que comercializamos">
-  <div class="container">
-    <div class="encabezado centrado reveal" style="margin-bottom:2.2rem">
-      <span class="eyebrow-s">Nuestras marcas</span>
-      <h2>Marcas líderes, garantía oficial</h2>
-      <p>Trabajamos con las firmas más reconocidas del mercado óptico.</p>
-    </div>
-  </div>
-  <!--
-    CARRUSEL DE MARCAS · Cómo reemplazar por banners definitivos:
-    sustituir el contenido de cada <div class="banner-marca"> por
-    <img src="assets/marcas/nombre.jpg" alt="Nombre de la marca">
-    (banner recomendado: 480 × 220 px). El movimiento y el diseño no requieren cambios.
-  -->
-  <div class="cinta-marcas reveal" aria-hidden="false">
-    <div class="pista">
-      <div class="banner-marca"><span class="tipo-a">RAY·BAN</span><small>Sol y recetados</small></div>
-      <div class="banner-marca"><span class="tipo-b">Oakley</span><small>Deporte y alto impacto</small></div>
-      <div class="banner-marca"><span class="tipo-c">VULK</span><small>Diseño argentino</small></div>
-      <div class="banner-marca"><span class="tipo-a">INFINIT</span><small>Urbano contemporáneo</small></div>
-      <div class="banner-marca"><span class="tipo-b">Rusty</span><small>Estilo joven</small></div>
-      <div class="banner-marca"><span class="tipo-c">ZEISS</span><small>Cristales de precisión</small></div>
-      <div class="banner-marca"><span class="tipo-a">ESSILOR</span><small>Lentes oftálmicos</small></div>
-      <!-- duplicado para el desplazamiento infinito -->
-      <div class="banner-marca"><span class="tipo-a">RAY·BAN</span><small>Sol y recetados</small></div>
-      <div class="banner-marca"><span class="tipo-b">Oakley</span><small>Deporte y alto impacto</small></div>
-      <div class="banner-marca"><span class="tipo-c">VULK</span><small>Diseño argentino</small></div>
-      <div class="banner-marca"><span class="tipo-a">INFINIT</span><small>Urbano contemporáneo</small></div>
-      <div class="banner-marca"><span class="tipo-b">Rusty</span><small>Estilo joven</small></div>
-      <div class="banner-marca"><span class="tipo-c">ZEISS</span><small>Cristales de precisión</small></div>
-      <div class="banner-marca"><span class="tipo-a">ESSILOR</span><small>Lentes oftálmicos</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- Especialidades -->
-<section id="especialidades">
-  <div class="container">
-    <div class="encabezado centrado reveal">
-      <span class="eyebrow-s">Especialidades</span>
-      <h2>Soluciones para cada mirada</h2>
-      <p>Un servicio integral de salud visual, pensado para cada etapa y estilo de vida.</p>
-    </div>
-    <div class="grilla-esp">
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 14h2M3 14l1.5-6h3M21 14l-1.5-6h-3"/></svg></div>
-        <h3>Lentes recetados</h3>
-        <p>Confección de anteojos según tu receta, con cristales orgánicos, antirreflejo, fotocromáticos y filtro de luz azul.</p>
-      </article>
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c2.5-4.5 15.5-4.5 18 0M3 12c2.5 4.5 15.5 4.5 18 0"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-        <h3>Multifocales</h3>
-        <p>Lentes progresivos de diseño digital para ver con nitidez de lejos, de cerca y en distancias intermedias.</p>
-      </article>
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
-        <h3>Anteojos de sol</h3>
-        <p>Colecciones de primeras marcas con protección UV total, también disponibles en versión recetada.</p>
-      </article>
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21v-2a3 3 0 0 1 6 0v2M12 3a4 4 0 0 1 4 4c0 3-1.5 4-4 4s-4-1-4-4a4 4 0 0 1 4-4Z"/></svg></div>
-        <h3>Óptica infantil</h3>
-        <p>Monturas resistentes y livianas para chicos, con asesoramiento especial para las primeras experiencias con lentes.</p>
-      </article>
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.4 6.4l-4 4a1.5 1.5 0 0 0 2.1 2.1l4-4a4.5 4.5 0 0 0 6.4-6.4Z"/><path d="m15 9-6 6"/></svg></div>
-        <h3>Reparaciones y ajustes</h3>
-        <p>Servicio técnico de armazones: soldaduras, cambio de plaquetas, tornillos y calibrado para un ajuste perfecto.</p>
-      </article>
-      <article class="esp reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h16l-1.5 12h-13L4 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
-        <h3>Accesorios y cuidado</h3>
-        <p>Todo para proteger y mantener tus lentes: estuches, paños, líquidos de limpieza, cadenas y cordones deportivos.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Accesorios -->
-<section class="accesorios" id="accesorios">
-  <div class="container">
-    <div class="encabezado centrado reveal">
-      <span class="eyebrow-s">Accesorios</span>
-      <h2>Todo para el cuidado de tus lentes</h2>
-      <p>Una línea completa de accesorios para proteger, limpiar y disfrutar tus anteojos por más tiempo.</p>
-    </div>
-    <div class="grilla-acc">
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="11" rx="3"/><path d="M3 12h18M8 8V6.5A1.5 1.5 0 0 1 9.5 5h5A1.5 1.5 0 0 1 16 6.5V8"/></svg></div>
-        <h3>Estuches para anteojos</h3>
-        <p>Rígidos, semirrígidos y de diseño, para llevar tus lentes protegidos a todos lados.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v14H5z" transform="rotate(8 12 12)"/><path d="m8 12 2.5 2.5L16 9" /></svg></div>
-        <h3>Paños de microfibra</h3>
-        <p>Limpieza segura de cristales sin rayaduras, ideales para tratamientos antirreflejo.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3h4M9 7h6M9 7l-1.8 11A2.5 2.5 0 0 0 9.7 21h4.6a2.5 2.5 0 0 0 2.5-3L15 7M12 3v4"/></svg></div>
-        <h3>Líquidos y kits de limpieza</h3>
-        <p>Sprays limpiadores y kits completos para el mantenimiento diario de tus lentes.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="8" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="18" cy="16" r="2.2"/><path d="M7.8 9.4 10.2 10.6M13.8 13.4l2.4 1.2"/></svg></div>
-        <h3>Cadenas y sujetadores</h3>
-        <p>Cadenitas clásicas y modernas para tener tus lentes siempre a mano, con estilo.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12c4-6 12-6 16 0M6 12c0 5 2.5 8 6 8s6-3 6-8"/></svg></div>
-        <h3>Cordones deportivos</h3>
-        <p>Sujeción firme para correr, andar en bici o hacer deporte sin preocuparte por tus lentes.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="12" rx="4"/><path d="M4 13c3-2 13-2 16 0"/></svg></div>
-        <h3>Fundas rígidas y flexibles</h3>
-        <p>Opciones para cada uso: máxima protección en la mochila o mínimo volumen en el bolsillo.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15h16M7 15l1-8h8l1 8M10 19h4"/></svg></div>
-        <h3>Accesorios para lectura</h3>
-        <p>Estuches finos, portalentes de escritorio y soluciones prácticas para tus lentes de lectura.</p>
-      </article>
-      <article class="acc reveal">
-        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 3.5 5 6.4 5 9a5 5 0 0 1-10 0c0-2.6 2-5.5 5-9Z"/><path d="M9.5 13a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
-        <h3>Mantenimiento y cuidado</h3>
-        <p>Plaquetas, tornillería, antiempañantes y todo lo necesario para que tus anteojos duren como nuevos.</p>
-      </article>
-    </div>
-    <p class="nota-acc reveal">Consultá disponibilidad y precios por WhatsApp al <a href="https://wa.me/5493413640899" style="color:var(--azul-brillo);font-weight:600">341 364 0899</a>.</p>
-  </div>
-</section>
-
-<!-- Pilares -->
-<section class="pilares">
-  <div class="container">
-    <div class="encabezado reveal">
-      <span class="eyebrow-s" style="color:var(--celeste)">Nuestros pilares</span>
-      <h2>Lo que nos mueve todos los días</h2>
-    </div>
-    <div class="grilla-pilares">
-      <article class="pilar reveal">
-        <span class="num">MISIÓN</span>
-        <h3>Cuidar tu visión</h3>
-        <p>Brindar soluciones de salud visual de excelencia, con productos de calidad y tecnología en constante renovación, para mejorar la calidad de vida de cada cliente.</p>
-      </article>
-      <article class="pilar reveal">
-        <span class="num">VISIÓN</span>
-        <h3>Ser tu óptica de confianza</h3>
-        <p>Consolidarnos como la óptica de referencia de la zona, reconocida por su calidez, su profesionalismo y el vínculo cercano con cada persona que nos elige.</p>
-      </article>
-      <article class="pilar reveal">
-        <span class="num">COMPROMISO</span>
-        <h3>Calidad sin excepciones</h3>
-        <p>Poner a tu alcance las últimas colecciones de monturas y los cristales más avanzados en diseño, tecnología y materiales, siempre con precios justos.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Obras sociales -->
-<section class="obras" id="obras-sociales">
-  <div class="container">
-    <div class="encabezado centrado reveal">
-      <span class="eyebrow-s">Obras sociales</span>
-      <h2>Trabajamos con tu cobertura</h2>
-      <p>Atendemos las principales obras sociales y prepagas. Consultanos por la tuya y te confirmamos la cobertura al instante.</p>
-    </div>
-    <div class="franja reveal">
-      <span class="chip">Obras sociales provinciales</span>
-      <span class="chip">Prepagas</span>
-      <span class="chip">Sindicales</span>
-      <span class="chip">PAMI · Jubilados</span>
-      <span class="chip">Reintegros</span>
-    </div>
-    <p class="nota reveal">¿No encontrás la tuya? Escribinos por WhatsApp al <a href="https://wa.me/5493413640899" style="color:var(--azul-brillo);font-weight:600">341 364 0899</a> y lo verificamos por vos.</p>
-  </div>
-</section>
-
-<!-- Contacto -->
-<section class="contacto" id="contacto">
-  <div class="container">
-    <div class="reveal">
-      <div class="encabezado" style="margin-bottom:0">
+  <!-- Contacto -->
+  <section class="contacto-sec" id="contacto">
+    <div class="container">
+      <div class="encabezado reveal">
         <span class="eyebrow-s">Contacto</span>
         <h2>Vení a visitarnos</h2>
-        <p>Te esperamos en nuestro local para asesorarte personalmente. También podés escribirnos y coordinamos tu consulta.</p>
+        <p>Te esperamos para asesorarte personalmente.</p>
       </div>
-      <div class="fichas">
-        <div class="ficha">
-          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div>
-            <b>Dirección</b>
-            <p>Av. Ovidio Lagos 3016 (S2000)<br>Rosario, Santa Fe, Argentina</p>
-          </div>
-        </div>
-        <div class="ficha">
-          <div class="icono"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg></div>
-          <div>
-            <b>WhatsApp / Teléfono</b>
-            <a class="dato-link" href="https://wa.me/5493413640899" target="_blank" rel="noopener">341 364 0899</a>
-          </div>
-        </div>
-        <div class="ficha">
-          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <div>
-            <b>Horarios de atención</b>
-            <p>Lunes a viernes: 09:00 a 12:30 hs · 16:00 a 19:30 hs<br>Sábados: 09:00 a 12:30 hs<br>Domingos: cerrado</p>
-          </div>
-        </div>
+      <div class="grid-contacto">
+        <div class="datos-contacto reveal" id="datos-contacto"></div>
+        <div class="mapa reveal"><iframe id="mapa-frame" title="Ubicación de SyC Óptica" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
-      <a class="btn btn-primario" href="https://wa.me/5493413640899?text=Hola%20SyC%20%C3%93ptica!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg>
-        Escribinos por WhatsApp
-      </a>
     </div>
-    <div class="mapa reveal">
-      <iframe title="Ubicación de SyC Óptica en el mapa"
-        src="https://www.google.com/maps?q=Av.+Ovidio+Lagos+3016,+Rosario,+Santa+Fe,+Argentina&output=embed"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- Footer -->
 <footer>
   <div class="container">
-    <div class="grilla-footer">
-      <div class="footer-marca">
-        <a class="marca" href="#inicio" style="color:#fff">
-          <svg class="iris" viewBox="0 0 64 64" aria-hidden="true">
-            <g stroke="#6FC3FF" stroke-width="4.5" stroke-linecap="round" fill="none">
-              <path d="M32 5 q15 6 13 21"/><path d="M59 32 q-6 15 -21 13"/>
-              <path d="M32 59 q-15 -6 -13 -21"/><path d="M5 32 q6 -15 21 -13"/>
-            </g>
-            <circle cx="32" cy="32" r="12.5" fill="#fff"/>
-            <circle cx="27.5" cy="27.5" r="4.5" fill="#061B3F"/>
-          </svg>
-          <span><strong style="color:#fff">SyC</strong><span style="color:#8FAEDA">Óptica</span></span>
-        </a>
-        <p>Tu óptica de confianza en Rosario. Salud visual, moda y asesoramiento profesional en un solo lugar.</p>
-      </div>
-      <div>
-        <h4>Nosotros</h4>
-        <ul>
-          <li><a href="#nosotros">Quiénes somos</a></li>
-          <li><a href="#obras-sociales">Obras sociales</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Especialidades</h4>
-        <ul>
-          <li><a href="#especialidades">Lentes recetados</a></li>
-          <li><a href="#especialidades">Multifocales</a></li>
-          <li><a href="#especialidades">Anteojos de sol</a></li>
-          <li><a href="#accesorios">Accesorios</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li>Av. Ovidio Lagos 3016</li>
-          <li>S2000 · Rosario, Santa Fe</li>
-          <li><a href="https://wa.me/5493413640899" target="_blank" rel="noopener">WhatsApp: 341 364 0899</a></li>
-          <li style="margin-top:.9rem"><b style="color:#fff;font-family:var(--f-display);font-size:.85rem">Horarios</b></li>
-          <li>Lun a Vie: 09:00–12:30 · 16:00–19:30</li>
-          <li>Sáb: 09:00–12:30 · Dom: cerrado</li>
-        </ul>
-      </div>
-    </div>
-    <div class="legal">
-      <span>© <span id="anio">2026</span> SyC Óptica. Todos los derechos reservados.</span>
-      <span>Rosario, Santa Fe, Argentina</span>
-    </div>
+    <span>© <span id="anio"></span> SyC Óptica · Rosario, Santa Fe</span>
+    <div class="redes-pie" id="redes-pie"></div>
   </div>
 </footer>
 
-<!-- WhatsApp flotante -->
-<a class="wsp-flotante" href="https://wa.me/5493413640899" target="_blank" rel="noopener" aria-label="Escribir a SyC Óptica por WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-2.6-.8-4.5-2.5-5.9-4.9-.7-1.2-1-2.3-.6-3 .2-.5.7-1.1 1.2-1.1h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .7.5.9 1.5 1.9 2.7 2.5.3.2.5.1.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5s0 .3-.2.4Z"/></svg>
+<a id="wa-flotante" class="wa-flotante" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.2 13.9c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .6-.2 1Z"/></svg>
 </a>
 
-<script>
-// Menú móvil
-const btnMenu = document.querySelector('.hamburguesa');
-const menu = document.getElementById('menu');
-btnMenu.addEventListener('click', () => {
-  const abierto = menu.classList.toggle('abierto');
-  btnMenu.classList.toggle('abierto', abierto);
-  btnMenu.setAttribute('aria-expanded', abierto);
-  document.body.style.overflow = abierto ? 'hidden' : '';
-});
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  menu.classList.remove('abierto');
-  btnMenu.classList.remove('abierto');
-  btnMenu.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}));
+<!-- Modal genérico (lightbox de galería y lectura de publicaciones) -->
+<div class="modal-fondo" id="modal" role="dialog" aria-modal="true">
+  <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">✕</button>
+  <div id="modal-contenido"></div>
+</div>
 
-// Aparición al hacer scroll
-const observador = new IntersectionObserver(entradas => {
-  entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observador.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observador.observe(el));
-
-// Año actual
-document.getElementById('anio').textContent = new Date().getFullYear();
-</script>
+<script src="js/content-default.js"></script>
+<script src="js/store.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de administración | SyC Óptica</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23061B3F'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%230B3D91'/%3E%3Ccircle cx='27' cy='27' r='5' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============ Pantalla de acceso ============ -->
+<div class="login-fondo" id="pantalla-login">
+  <form class="login-caja" id="form-login" autocomplete="off">
+    <svg class="iris" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0B3D91"/><circle cx="32" cy="32" r="13" fill="#081C3F"/><circle cx="27" cy="27" r="5" fill="#fff"/><g stroke="#6FC3FF" stroke-width="4" stroke-linecap="round" fill="none"><path d="M32 6 q14 6 12 20"/><path d="M58 32 q-6 14 -20 12"/><path d="M32 58 q-14 -6 -12 -20"/><path d="M6 32 q6 -14 20 -12"/></g></svg>
+    <h1>Panel de SyC Óptica</h1>
+    <p>Acceso exclusivo para el personal</p>
+    <label for="in-usuario">Usuario</label>
+    <input id="in-usuario" type="text" required autocomplete="username">
+    <label for="in-clave">Contraseña</label>
+    <input id="in-clave" type="password" required autocomplete="current-password">
+    <div class="login-error" id="login-error">Usuario o contraseña incorrectos.</div>
+    <button class="btn btn-azul" type="submit">Ingresar</button>
+  </form>
+</div>
+
+<!-- ============ Panel ============ -->
+<button class="abrir-menu" id="abrir-menu" aria-label="Abrir menú">☰</button>
+<div class="panel" id="panel">
+  <aside id="lateral">
+    <div class="marca">
+      <svg class="iris" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#2E7CE6"/><circle cx="32" cy="32" r="13" fill="#061B3F"/><circle cx="27" cy="27" r="5" fill="#fff"/></svg>
+      SyC · Panel
+    </div>
+    <button class="nav-item activo" data-sec="inicio">🏠 Inicio</button>
+    <button class="nav-item" data-sec="promociones">🏷️ Promociones</button>
+    <button class="nav-item" data-sec="especialidades">👓 Especialidades</button>
+    <button class="nav-item" data-sec="marcas">⭐ Marcas</button>
+    <button class="nav-item" data-sec="galeria">🖼️ Galería</button>
+    <button class="nav-item" data-sec="publicaciones">📰 Publicaciones</button>
+    <button class="nav-item" data-sec="instagram">📸 Instagram</button>
+    <button class="nav-item" data-sec="redes">🔗 Redes sociales</button>
+    <button class="nav-item" data-sec="ajustes">⚙️ Ajustes</button>
+    <div class="abajo">
+      <a class="ver-sitio" href="index.html" target="_blank" rel="noopener">↗ Ver el sitio</a>
+      <button class="nav-item" id="btn-salir">🚪 Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <main class="contenido" id="contenido"></main>
+
+  <div class="barra-guardar">
+    <button class="btn btn-verde" id="btn-guardar">💾 Guardar cambios</button>
+    <button class="btn btn-borde" id="btn-descartar">Descartar</button>
+    <span class="estado" id="estado-guardado">Sin cambios pendientes</span>
+  </div>
+</div>
+
+<!-- Diálogo de edición -->
+<div class="dialogo-fondo" id="dialogo-fondo">
+  <div class="dialogo" role="dialog" aria-modal="true">
+    <h3 id="dialogo-titulo"></h3>
+    <div id="dialogo-cuerpo"></div>
+    <div class="pie">
+      <button class="btn btn-borde" id="dialogo-cancelar">Cancelar</button>
+      <button class="btn btn-azul" id="dialogo-aceptar">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/content-default.js"></script>
+<script src="js/store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
