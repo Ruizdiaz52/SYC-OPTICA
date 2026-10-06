@@ -12,17 +12,17 @@
 <meta property="og:title" content="SyC Óptica | Cuidamos tu salud visual en Rosario">
 <meta property="og:description" content="Lentes recetados, multifocales, accesorios y asesoramiento profesional. Av. Ovidio Lagos 3016, Rosario.">
 <meta property="og:site_name" content="SyC Óptica">
-<meta property="og:image" content="assets/logo-syc.jpg">
+<meta property="og:image" content="assets/favicon.png">
 <meta property="og:locale" content="es_AR">
 
-<link rel="icon" href="favicon.png" type="image/png">
-  
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Optician",
   "name": "SyC Óptica",
-  "image": "assets/logo-syc.jpg",
+  "image": "assets/favicon.png",
   "telephone": "+54 9 341 364-0899",
   "url": "https://sycoptica.com.ar",
   "address": {
@@ -908,11 +908,11 @@ footer a:hover{color:var(--celeste)}
       </div>
       <h2>Panel de administración</h2>
       <p class="sub">Ingresá tus credenciales para gestionar el sitio</p>
-      <div class="login-error" id="login-error">Usuario o contraseña incorrectos.</div>
+      <div class="login-error" id="login-error">Correo o contraseña incorrectos.</div>
       <form id="form-login" autocomplete="off">
         <div class="campo">
-          <label for="login-user">Usuario</label>
-          <input type="text" id="login-user" autocomplete="username" required>
+          <label for="login-user">Correo del administrador</label>
+          <input type="email" id="login-user" autocomplete="username" placeholder="admin@tudominio.com" required>
         </div>
         <div class="campo">
           <label for="login-pass">Contraseña</label>
@@ -970,7 +970,7 @@ footer a:hover{color:var(--celeste)}
           <section class="admin-seccion activa" data-seccion="inicio">
             <h2>Contenido del inicio</h2>
             <p class="desc-panel">Editá los textos principales, botones y colores del sitio.</p>
-            <div class="hint">Los cambios se guardan en este navegador. Tocá <b>Guardar cambios</b> al terminar.</div>
+            <div class="hint">Los cambios se publican en línea y quedan disponibles para todos los visitantes. Tocá <b>Guardar cambios</b> al terminar.</div>
             <div class="campo"><label>Etiqueta superior (eyebrow)</label><input type="text" id="i-eyebrow"></div>
             <div class="campo"><label>Título principal <span style="font-weight:400;color:var(--gris)">(usá * para resaltar en celeste: Mirá con *otra claridad*)</span></label><input type="text" id="i-titulo"></div>
             <div class="campo"><label>Texto de presentación</label><textarea id="i-texto"></textarea></div>
@@ -1132,10 +1132,10 @@ footer a:hover{color:var(--celeste)}
           <!-- ===== CUENTA ===== -->
           <section class="admin-seccion" data-seccion="cuenta">
             <h2>Cuenta y datos</h2>
-            <p class="desc-panel">Cambiá tus credenciales de acceso y gestioná tus datos.</p>
+            <p class="desc-panel">Administrá tu acceso seguro y generá copias de respaldo del contenido.</p>
             <div class="acordeon-form">
-              <h3>Cambiar credenciales</h3>
-              <div class="campo"><label>Nuevo usuario</label><input type="text" id="cta-user" autocomplete="off"></div>
+              <h3>Cuenta administradora</h3>
+              <div class="campo"><label>Correo electrónico</label><input type="email" id="cta-user" autocomplete="email"></div>
               <div class="admin-grid2">
                 <div class="campo"><label>Nueva contraseña</label><input type="password" id="cta-pass" autocomplete="new-password"></div>
                 <div class="campo"><label>Repetir contraseña</label><input type="password" id="cta-pass2" autocomplete="new-password"></div>
@@ -1146,7 +1146,7 @@ footer a:hover{color:var(--celeste)}
             </div>
             <div class="acordeon-form">
               <h3>Copia de seguridad</h3>
-              <p style="font-size:.88rem;color:var(--gris);margin-bottom:1rem">Descargá un respaldo de todo el contenido o restauralo. Útil para pasar los datos a otra computadora.</p>
+              <p style="font-size:.88rem;color:var(--gris);margin-bottom:1rem">Descargá un respaldo completo o restauralo. El contenido principal se sincroniza automáticamente con la base de datos en línea.</p>
               <div class="acciones-form">
                 <button class="btn-mini btn-azul" onclick="exportarDatos()">⬇ Descargar respaldo</button>
                 <button class="btn-mini btn-gris" onclick="document.getElementById('file-import').click()">⬆ Restaurar respaldo</button>
@@ -1168,15 +1168,15 @@ footer a:hover{color:var(--celeste)}
 
 <div class="aviso-guardado" id="aviso-guardado">✓ Cambios guardados</div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/config.js"></script>
 <script>
 /* =====================================================================
-   SyC Óptica — Sistema administrable (single-file, localStorage)
+   SyC Óptica — Plataforma administrable en línea
    ---------------------------------------------------------------------
-   NOTA sobre alcance: al ser un sitio de un solo archivo sin servidor,
-   los cambios del panel se guardan en el NAVEGADOR (localStorage). Para
-   una edición centralizada visible por todos los visitantes hace falta
-   un backend (Node/PHP + base de datos). El código queda modular y
-   preparado para esa migración: toda la data pasa por leerDB()/guardarDB().
+   Backend: Supabase (Auth + PostgreSQL + Storage).
+   El contenido público se obtiene de la nube. El localStorage queda como
+   caché/fallback para mantener el sitio operativo ante cortes temporales.
    ===================================================================== */
 
 /* ------------------------- Utilidades ------------------------- */
@@ -1213,7 +1213,7 @@ function optimizarImagen(file, maxLado=1280, calidad=0.82){
         const cv = document.createElement('canvas');
         cv.width = w; cv.height = h;
         cv.getContext('2d').drawImage(img, 0, 0, w, h);
-        resolve(cv.toDataURL('image/jpeg', calidad));
+        resolve(cv.toDataURL('image/webp', calidad));
       };
       img.onerror = reject;
       img.src = e.target.result;
@@ -1223,17 +1223,99 @@ function optimizarImagen(file, maxLado=1280, calidad=0.82){
   });
 }
 
-/* ------------------------- Base de datos (localStorage) ------------------------- */
+/* ------------------------- Backend y caché local ------------------------- */
 const DB_KEY = 'syc_optica_db_v1';
-const AUTH_KEY = 'syc_optica_auth_v1';
-const SESION_KEY = 'syc_optica_sesion_v1';
+let SB = null;
+let SUPA_SESSION = null;
+let guardadoRemotoTimer = null;
 
-/* Hash simple (SHA-256) para no guardar la contraseña en texto plano.
-   No es seguridad de servidor —imposible en HTML estático— pero evita
-   texto plano. En backend usar bcrypt/argon2. */
-async function hashear(txt){
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
-  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+const CFG = window.SYC_CONFIG || {};
+const CONTENT_ID = CFG.contentId || 'main';
+const MEDIA_BUCKET = CFG.mediaBucket || 'site-media';
+
+function backendConfigurado(){
+  return Boolean(CFG.supabaseUrl && CFG.supabaseAnonKey
+    && !String(CFG.supabaseUrl).includes('PEGAR_')
+    && !String(CFG.supabaseAnonKey).includes('PEGAR_'));
+}
+
+async function initBackend(){
+  if(!backendConfigurado() || !window.supabase?.createClient) return false;
+  SB = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey, {
+    auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+  });
+  const {data} = await SB.auth.getSession();
+  SUPA_SESSION = data.session || null;
+  SB.auth.onAuthStateChange((_event, session)=>{
+    SUPA_SESSION = session || null;
+    if(!session && !$('#admin').classList.contains('admin-oculto')) mostrarLogin();
+  });
+  return true;
+}
+
+function dataURLaBlob(dataURL){
+  const [cabecera, base64] = dataURL.split(',');
+  const mime = (cabecera.match(/data:([^;]+)/)||[])[1] || 'image/webp';
+  const bin = atob(base64);
+  const bytes = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+  return new Blob([bytes], {type:mime});
+}
+
+function nombreSeguro(nombre='imagen'){
+  return nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9._-]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60) || 'imagen';
+}
+
+async function subirBlobMedia(blob, carpeta, nombre='imagen'){
+  if(!SB || !SUPA_SESSION) throw new Error('Necesitás iniciar sesión para subir archivos.');
+  const base = nombreSeguro(nombre.replace(/\.[^.]+$/,''));
+  const ext = blob.type==='image/png' ? 'png' : blob.type==='image/jpeg' ? 'jpg' : 'webp';
+  const path = `${carpeta}/${Date.now()}-${uid()}-${base}.${ext}`;
+  const {error} = await SB.storage.from(MEDIA_BUCKET).upload(path, blob, {
+    contentType:blob.type || 'image/webp', cacheControl:'31536000', upsert:false
+  });
+  if(error) throw new Error('No se pudo subir la imagen: '+error.message);
+  const {data} = SB.storage.from(MEDIA_BUCKET).getPublicUrl(path);
+  return data.publicUrl;
+}
+
+async function procesarImagenParaGuardar(file, carpeta, maxLado=1280, calidad=0.82){
+  const dataURL = await optimizarImagen(file, maxLado, calidad);
+  if(!SB || !SUPA_SESSION) return dataURL;
+  return subirBlobMedia(dataURLaBlob(dataURL), carpeta, file.name||'imagen');
+}
+
+async function migrarMediosLocales(){
+  if(!SB || !SUPA_SESSION) return 0;
+  const objetivos = [];
+  if(DB.inicio?.heroImg?.startsWith('data:image/')) objetivos.push({obj:DB.inicio,key:'heroImg',carpeta:'hero',nombre:'hero'});
+  for(const [coleccion,carpeta] of [['galeria','galeria'],['promociones','promociones'],['marcas','marcas'],['publicaciones','publicaciones']]){
+    for(const item of DB[coleccion]||[]){
+      if(item.img?.startsWith('data:image/')) objetivos.push({obj:item,key:'img',carpeta,nombre:item.titulo||item.nombre||coleccion});
+    }
+  }
+  let migradas=0;
+  for(const x of objetivos){
+    try{
+      const blob=dataURLaBlob(x.obj[x.key]);
+      x.obj[x.key]=await subirBlobMedia(blob,x.carpeta,x.nombre);
+      migradas++;
+    }catch(e){ console.warn('No se pudo migrar una imagen local:',e); }
+  }
+  if(migradas){ try{ localStorage.setItem(DB_KEY,JSON.stringify(DB)); }catch(e){} }
+  return migradas;
+}
+
+function rutaMediaDesdeUrl(url=''){
+  if(!url || !CFG.supabaseUrl) return null;
+  const marca = `/storage/v1/object/public/${MEDIA_BUCKET}/`;
+  const i = url.indexOf(marca);
+  return i>=0 ? decodeURIComponent(url.slice(i+marca.length)) : null;
+}
+async function borrarMediaSiPropia(url){
+  const path = rutaMediaDesdeUrl(url);
+  if(path && SB && SUPA_SESSION){ try{ await SB.storage.from(MEDIA_BUCKET).remove([path]); }catch(e){ console.warn(e); } }
 }
 
 function datosPorDefecto(){
@@ -1281,21 +1363,54 @@ function datosPorDefecto(){
   };
 }
 
+function combinarDB(d){
+  const base = datosPorDefecto();
+  const remoto = d && typeof d==='object' ? d : {};
+  return {
+    ...base, ...remoto,
+    inicio:{
+      ...base.inicio, ...(remoto.inicio||{}),
+      colores:{...base.inicio.colores, ...((remoto.inicio||{}).colores||{})}
+    }
+  };
+}
 function leerDB(){
   try{
     const raw = localStorage.getItem(DB_KEY);
-    if(!raw) return datosPorDefecto();
-    const d = JSON.parse(raw);
-    const base = datosPorDefecto();
-    return {...base, ...d, inicio:{...base.inicio, ...(d.inicio||{})}};
+    return raw ? combinarDB(JSON.parse(raw)) : datosPorDefecto();
   }catch(e){ return datosPorDefecto(); }
 }
-function guardarDB(db){
-  try{ localStorage.setItem(DB_KEY, JSON.stringify(db)); return true; }
-  catch(e){
-    alert('No se pudo guardar: el almacenamiento del navegador está lleno. Probá con imágenes más livianas o eliminá contenido viejo.');
-    return false;
+async function cargarDBRemota(){
+  if(!SB) return false;
+  const {data,error} = await SB.from('site_content').select('data,updated_at').eq('id',CONTENT_ID).maybeSingle();
+  if(error){ console.warn('No se pudo leer la base remota:', error.message); return false; }
+  if(data?.data && Object.keys(data.data).length){
+    DB = combinarDB(data.data);
+    try{ localStorage.setItem(DB_KEY, JSON.stringify(DB)); }catch(e){}
+    return true;
   }
+  return false;
+}
+async function guardarDBRemota(snapshot){
+  if(!SB || !SUPA_SESSION) return;
+  const payload = {
+    id:CONTENT_ID, data:snapshot, updated_at:new Date().toISOString(), updated_by:SUPA_SESSION.user.id
+  };
+  const {error} = await SB.from('site_content').upsert(payload, {onConflict:'id'});
+  if(error){
+    console.error(error);
+    avisar('⚠ Error al publicar en línea');
+  }
+}
+function guardarDB(db){
+  try{ localStorage.setItem(DB_KEY, JSON.stringify(db)); }
+  catch(e){ console.warn('No se pudo actualizar la caché local:', e); }
+  if(SB && SUPA_SESSION){
+    const snapshot = JSON.parse(JSON.stringify(db));
+    clearTimeout(guardadoRemotoTimer);
+    guardadoRemotoTimer = setTimeout(()=>guardarDBRemota(snapshot), 180);
+  }
+  return true;
 }
 let DB = leerDB();
 
@@ -1519,55 +1634,34 @@ function cerrarAdmin(){
 $('#link-admin').addEventListener('click', e=>{ e.preventDefault(); location.hash='#admin'; abrirAdmin(); });
 window.addEventListener('hashchange', ()=>{ if(esRutaAdmin()) abrirAdmin(); });
 
-/* ------------------------- Autenticación ------------------------- */
-async function initAuth(){
-  if(!localStorage.getItem(AUTH_KEY)){
-    // usuario por defecto: admin / admin123
-    const hash = await hashear('admin123');
-    localStorage.setItem(AUTH_KEY, JSON.stringify({usuario:'admin', hash}));
-  }
-}
-function getAuth(){ try{ return JSON.parse(localStorage.getItem(AUTH_KEY)); }catch(e){ return null; } }
+/* ------------------------- Autenticación segura (Supabase Auth) ------------------------- */
+const TIEMPO_INACTIVIDAD = 30*60*1000;
+function sesionActiva(){ return Boolean(SUPA_SESSION?.user); }
 
-const TIEMPO_INACTIVIDAD = 15*60*1000; // 15 minutos
-function sesionActiva(){
-  try{
-    const s = JSON.parse(sessionStorage.getItem(SESION_KEY));
-    if(!s) return false;
-    if(Date.now() - s.ultimo > TIEMPO_INACTIVIDAD){ sessionStorage.removeItem(SESION_KEY); return false; }
-    return true;
-  }catch(e){ return false; }
-}
-function tocarSesion(){
-  if(sessionStorage.getItem(SESION_KEY)){
-    const s = JSON.parse(sessionStorage.getItem(SESION_KEY));
-    s.ultimo = Date.now();
-    sessionStorage.setItem(SESION_KEY, JSON.stringify(s));
-  }
-}
 let timerInactividad;
 function armarTimerInactividad(){
   clearTimeout(timerInactividad);
+  if(!sesionActiva()) return;
   timerInactividad = setTimeout(()=>{
-    if(!$('#admin').classList.contains('admin-oculto') && sessionStorage.getItem(SESION_KEY)){
-      logout(true);
-    }
-  }, TIEMPO_INACTIVIDAD + 1000);
+    if(!$('#admin').classList.contains('admin-oculto') && sesionActiva()) logout(true);
+  }, TIEMPO_INACTIVIDAD);
 }
 ['click','keydown','mousemove','scroll','touchstart'].forEach(ev=>
-  document.addEventListener(ev, ()=>{ if(sessionStorage.getItem(SESION_KEY)){ tocarSesion(); armarTimerInactividad(); }}, {passive:true}));
+  document.addEventListener(ev, ()=>{ if(sesionActiva()) armarTimerInactividad(); }, {passive:true}));
 
 function mostrarLogin(){
   $('#admin-login').style.display='grid';
   $('#admin-app').hidden = true;
+  if(!backendConfigurado()){
+    $('#login-error').textContent='Falta configurar Supabase en assets/config.js. Revisá README.md.';
+    $('#login-error').classList.add('visible');
+  }
   setTimeout(()=>$('#login-user').focus(), 50);
 }
 function entrarPanel(){
   $('#admin-login').style.display='none';
   $('#admin-app').hidden = false;
-  const auth = getAuth();
-  $('#sesion-info').textContent = 'Conectado como ' + (auth?auth.usuario:'admin');
-  DB = leerDB();
+  $('#sesion-info').textContent = 'Conectado como ' + (SUPA_SESSION?.user?.email || 'administrador');
   cargarFormularios();
   renderAdminTodo();
   armarTimerInactividad();
@@ -1575,25 +1669,50 @@ function entrarPanel(){
 
 $('#form-login').addEventListener('submit', async e=>{
   e.preventDefault();
-  const u = $('#login-user').value.trim();
-  const p = $('#login-pass').value;
-  const auth = getAuth();
-  const hash = await hashear(p);
-  if(auth && u === auth.usuario && hash === auth.hash){
-    sessionStorage.setItem(SESION_KEY, JSON.stringify({usuario:u, ultimo:Date.now()}));
-    $('#login-error').classList.remove('visible');
-    $('#login-pass').value='';
-    entrarPanel();
-  }else{
+  if(!SB){
+    $('#login-error').textContent='Backend no configurado. Completá assets/config.js.';
+    $('#login-error').classList.add('visible');
+    return;
+  }
+  const email = $('#login-user').value.trim();
+  const password = $('#login-pass').value;
+  const {data,error} = await SB.auth.signInWithPassword({email,password});
+  if(error || !data.session){
+    $('#login-error').textContent='Correo o contraseña incorrectos.';
     $('#login-error').classList.add('visible');
     $('#login-pass').value='';
+    return;
   }
+  SUPA_SESSION = data.session;
+  const {data:adminOk} = await SB.rpc('is_site_admin');
+  if(!adminOk){
+    await SB.auth.signOut();
+    SUPA_SESSION=null;
+    $('#login-error').textContent='Esta cuenta no tiene permisos de administración.';
+    $('#login-error').classList.add('visible');
+    return;
+  }
+  const habiaContenidoRemoto = await cargarDBRemota();
+  if(!habiaContenidoRemoto){
+    const migradas = await migrarMediosLocales();
+    await guardarDBRemota(JSON.parse(JSON.stringify(DB)));
+    if(migradas) avisar(`Se migraron ${migradas} imágenes al almacenamiento en línea`);
+  }
+  renderTodoPublico();
+  $('#login-error').classList.remove('visible');
+  $('#login-pass').value='';
+  entrarPanel();
 });
-function logout(porInactividad=false){
-  sessionStorage.removeItem(SESION_KEY);
+async function logout(porInactividad=false){
+  if(SB) await SB.auth.signOut();
+  SUPA_SESSION=null;
   mostrarLogin();
-  if(porInactividad){ $('#login-error').textContent='Tu sesión se cerró por inactividad. Ingresá de nuevo.'; $('#login-error').classList.add('visible'); }
-  else { $('#login-error').textContent='Usuario o contraseña incorrectos.'; $('#login-error').classList.remove('visible'); }
+  if(porInactividad){
+    $('#login-error').textContent='Tu sesión se cerró por inactividad. Ingresá de nuevo.';
+    $('#login-error').classList.add('visible');
+  }else{
+    $('#login-error').classList.remove('visible');
+  }
 }
 $('#btn-logout').addEventListener('click', ()=>logout());
 $('#salir-login').addEventListener('click', e=>{ e.preventDefault(); cerrarAdmin(); });
@@ -1628,7 +1747,7 @@ function cargarFormularios(){
   $('#hero-preview-cont').innerHTML = i.heroImg
     ? `<img class="preview-img" src="${i.heroImg}"><div style="margin-top:.5rem"><button class="btn-mini btn-rojo" onclick="quitarHeroImg()">Quitar imagen</button></div>`
     : '';
-  $('#cta-user').value = (getAuth()||{}).usuario||'';
+  $('#cta-user').value = SUPA_SESSION?.user?.email || '';
   $('#b-fecha').value = hoyISO();
   $('#p-inicio').value = hoyISO();
 }
@@ -1671,17 +1790,17 @@ function resetColores(){
 $('#zona-hero').addEventListener('click', ()=>$('#file-hero').click());
 $('#file-hero').addEventListener('change', async e=>{
   if(!e.target.files[0]) return;
-  DB.inicio.heroImg = await optimizarImagen(e.target.files[0], 900, 0.82);
+  try{ DB.inicio.heroImg = await procesarImagenParaGuardar(e.target.files[0], 'hero', 900, 0.82); }catch(err){ alert(err.message); return; }
   guardarDB(DB); cargarFormularios(); renderInicio(); avisar('Imagen del hero cargada');
 });
-function quitarHeroImg(){ DB.inicio.heroImg=''; guardarDB(DB); cargarFormularios(); location.reload(); }
+function quitarHeroImg(){ const anterior=DB.inicio.heroImg; DB.inicio.heroImg=''; guardarDB(DB); borrarMediaSiPropia(anterior); cargarFormularios(); renderInicio(); avisar('Imagen del hero eliminada'); }
 
 /* ==================== GALERÍA ==================== */
 let fotoTemp = '';
 $('#zona-galeria').addEventListener('click', ()=>$('#file-galeria').click());
 $('#file-galeria').addEventListener('change', async e=>{
   if(!e.target.files[0]) return;
-  fotoTemp = await optimizarImagen(e.target.files[0], 1200, 0.8);
+  try{ fotoTemp = await procesarImagenParaGuardar(e.target.files[0], 'galeria', 1200, 0.8); }catch(err){ alert(err.message); return; }
   $('#galeria-preview-cont').innerHTML = `<img class="preview-img" src="${fotoTemp}">`;
 });
 function agregarFoto(){
@@ -1713,7 +1832,7 @@ function renderListaGaleria(){
 }
 function moverFoto(i,d){ const n=i+d; if(n<0||n>=DB.galeria.length)return; [DB.galeria[i],DB.galeria[n]]=[DB.galeria[n],DB.galeria[i]]; guardarDB(DB); renderListaGaleria(); renderGaleria(); }
 function toggleFoto(i){ DB.galeria[i].oculta=!DB.galeria[i].oculta; guardarDB(DB); renderListaGaleria(); renderGaleria(); }
-function borrarFoto(i){ if(confirm('¿Eliminar esta foto?')){ DB.galeria.splice(i,1); guardarDB(DB); renderListaGaleria(); renderGaleria(); avisar('Foto eliminada'); } }
+function borrarFoto(i){ if(confirm('¿Eliminar esta foto?')){ const [eliminada]=DB.galeria.splice(i,1); guardarDB(DB); borrarMediaSiPropia(eliminada?.img); renderListaGaleria(); renderGaleria(); avisar('Foto eliminada'); } }
 function editarFoto(i){
   const f=DB.galeria[i];
   const t=prompt('Título de la foto:', f.titulo||''); if(t===null)return;
@@ -1726,7 +1845,7 @@ let promoTemp='', editPromoId=null;
 $('#zona-promo').addEventListener('click', ()=>$('#file-promo').click());
 $('#file-promo').addEventListener('change', async e=>{
   if(!e.target.files[0]) return;
-  promoTemp = await optimizarImagen(e.target.files[0], 1000, 0.8);
+  try{ promoTemp = await procesarImagenParaGuardar(e.target.files[0], 'promociones', 1000, 0.8); }catch(err){ alert(err.message); return; }
   $('#promo-preview-cont').innerHTML = `<img class="preview-img" src="${promoTemp}">`;
 });
 function guardarPromo(){
@@ -1764,7 +1883,7 @@ function editarPromo(id){
   $('#btn-cancelar-promo').hidden=false;
   $('#p-titulo').scrollIntoView({behavior:'smooth',block:'center'});
 }
-function borrarPromo(id){ if(confirm('¿Eliminar esta promoción?')){ DB.promociones=DB.promociones.filter(x=>x.id!==id); guardarDB(DB); renderListaPromos(); renderPromos(); avisar('Promoción eliminada'); } }
+function borrarPromo(id){ if(confirm('¿Eliminar esta promoción?')){ const eliminada=DB.promociones.find(x=>x.id===id); DB.promociones=DB.promociones.filter(x=>x.id!==id); guardarDB(DB); borrarMediaSiPropia(eliminada?.img); renderListaPromos(); renderPromos(); avisar('Promoción eliminada'); } }
 function renderListaPromos(){
   const cont=$('#lista-promos');
   if(!DB.promociones.length){ cont.innerHTML='<p style="color:var(--gris);font-size:.9rem">Sin promociones cargadas.</p>'; return; }
@@ -1792,7 +1911,7 @@ let marcaTemp='';
 $('#zona-marca').addEventListener('click', ()=>$('#file-marca').click());
 $('#file-marca').addEventListener('change', async e=>{
   if(!e.target.files[0]) return;
-  marcaTemp = await optimizarImagen(e.target.files[0], 600, 0.85);
+  try{ marcaTemp = await procesarImagenParaGuardar(e.target.files[0], 'marcas', 600, 0.85); }catch(err){ alert(err.message); return; }
   $('#marca-preview-cont').innerHTML=`<img class="preview-img" src="${marcaTemp}">`;
 });
 function agregarMarca(){
@@ -1803,7 +1922,7 @@ function agregarMarca(){
   renderListaMarcas(); renderMarcas(); avisar('Marca agregada');
 }
 function moverMarca(i,d){ const n=i+d; if(n<0||n>=DB.marcas.length)return; [DB.marcas[i],DB.marcas[n]]=[DB.marcas[n],DB.marcas[i]]; guardarDB(DB); renderListaMarcas(); renderMarcas(); }
-function borrarMarca(id){ if(confirm('¿Eliminar esta marca?')){ DB.marcas=DB.marcas.filter(x=>x.id!==id); guardarDB(DB); renderListaMarcas(); renderMarcas(); avisar('Marca eliminada'); } }
+function borrarMarca(id){ if(confirm('¿Eliminar esta marca?')){ const eliminada=DB.marcas.find(x=>x.id===id); DB.marcas=DB.marcas.filter(x=>x.id!==id); guardarDB(DB); borrarMediaSiPropia(eliminada?.img); renderListaMarcas(); renderMarcas(); avisar('Marca eliminada'); } }
 function editarMarca(id){
   const m=DB.marcas.find(x=>x.id===id); if(!m)return;
   const n=prompt('Nombre de la marca:', m.nombre||''); if(n===null)return;
@@ -1873,7 +1992,7 @@ let pubTemp='', editPubId=null;
 $('#zona-pub').addEventListener('click', ()=>$('#file-pub').click());
 $('#file-pub').addEventListener('change', async e=>{
   if(!e.target.files[0]) return;
-  pubTemp = await optimizarImagen(e.target.files[0], 1100, 0.8);
+  try{ pubTemp = await procesarImagenParaGuardar(e.target.files[0], 'publicaciones', 1100, 0.8); }catch(err){ alert(err.message); return; }
   $('#pub-preview-cont').innerHTML=`<img class="preview-img" src="${pubTemp}">`;
 });
 function guardarPub(){
@@ -1900,7 +2019,7 @@ function editarPub(id){
   $('#btn-guardar-pub').textContent='💾 Guardar cambios'; $('#btn-cancelar-pub').hidden=false;
   $('#b-titulo').scrollIntoView({behavior:'smooth',block:'center'});
 }
-function borrarPub(id){ if(confirm('¿Eliminar esta publicación?')){ DB.publicaciones=DB.publicaciones.filter(x=>x.id!==id); guardarDB(DB); renderListaPub(); renderPublicaciones(); avisar('Publicación eliminada'); } }
+function borrarPub(id){ if(confirm('¿Eliminar esta publicación?')){ const eliminada=DB.publicaciones.find(x=>x.id===id); DB.publicaciones=DB.publicaciones.filter(x=>x.id!==id); guardarDB(DB); borrarMediaSiPropia(eliminada?.img); renderListaPub(); renderPublicaciones(); avisar('Publicación eliminada'); } }
 function renderListaPub(){
   const cont=$('#lista-pub');
   if(!DB.publicaciones.length){ cont.innerHTML='<p style="color:var(--gris);font-size:.9rem">Sin publicaciones.</p>'; return; }
@@ -1948,19 +2067,24 @@ function agregarRed(){
 
 /* ==================== CUENTA ==================== */
 async function cambiarCredenciales(){
-  const u=$('#cta-user').value.trim(), p=$('#cta-pass').value, p2=$('#cta-pass2').value;
-  if(!u){ alert('El usuario no puede quedar vacío.'); return; }
-  const auth=getAuth();
-  let hash=auth.hash;
-  if(p||p2){
-    if(p.length<5){ alert('La contraseña debe tener al menos 5 caracteres.'); return; }
-    if(p!==p2){ alert('Las contraseñas no coinciden.'); return; }
-    hash=await hashear(p);
+  if(!SB || !SUPA_SESSION){ alert('No hay una sesión activa.'); return; }
+  const email=$('#cta-user').value.trim();
+  const p=$('#cta-pass').value, p2=$('#cta-pass2').value;
+  if(!email){ alert('El correo no puede quedar vacío.'); return; }
+  if((p||p2) && p.length<8){ alert('La contraseña debe tener al menos 8 caracteres.'); return; }
+  if(p!==p2){ alert('Las contraseñas no coinciden.'); return; }
+  const cambios={};
+  if(email !== SUPA_SESSION.user.email) cambios.email=email;
+  if(p) cambios.password=p;
+  if(!Object.keys(cambios).length){ avisar('No hay cambios para guardar'); return; }
+  const {data,error}=await SB.auth.updateUser(cambios);
+  if(error){ alert('No se pudo actualizar la cuenta: '+error.message); return; }
+  if(data?.user){
+    SUPA_SESSION={...SUPA_SESSION,user:data.user};
+    $('#sesion-info').textContent='Conectado como '+(data.user.email||email);
   }
-  localStorage.setItem(AUTH_KEY, JSON.stringify({usuario:u, hash}));
-  const s=JSON.parse(sessionStorage.getItem(SESION_KEY)||'{}'); s.usuario=u; sessionStorage.setItem(SESION_KEY, JSON.stringify(s));
-  $('#cta-pass').value=''; $('#cta-pass2').value=''; $('#sesion-info').textContent='Conectado como '+u;
-  avisar('Credenciales actualizadas');
+  $('#cta-pass').value=''; $('#cta-pass2').value='';
+  avisar(cambios.email ? 'Revisá tu correo para confirmar el cambio' : 'Contraseña actualizada');
 }
 
 /* ==================== BACKUP / RESTAURAR ==================== */
@@ -1987,7 +2111,7 @@ function importarDatos(ev){
 }
 function restaurarFabrica(){
   if(confirm('Esto borrará TODO el contenido cargado y volverá a los valores originales. ¿Continuar?')){
-    localStorage.removeItem(DB_KEY); DB=leerDB();
+    localStorage.removeItem(DB_KEY); DB=datosPorDefecto(); guardarDB(DB);
     cargarFormularios(); renderAdminTodo(); renderTodoPublico(); avisar('Contenido restaurado de fábrica');
   }
 }
@@ -1996,7 +2120,8 @@ function restaurarFabrica(){
    ARRANQUE
    =================================================================== */
 (async function init(){
-  await initAuth();
+  await initBackend();
+  await cargarDBRemota();
   renderTodoPublico();
   observarReveal();
   if(esRutaAdmin()) abrirAdmin();
